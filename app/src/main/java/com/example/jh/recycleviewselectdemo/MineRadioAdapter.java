@@ -2,6 +2,7 @@ package com.example.jh.recycleviewselectdemo;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import butterknife.InjectView;
 public class MineRadioAdapter extends RecyclerView.Adapter<MineRadioAdapter.ViewHolder> {
 
     private static final int MYLIVE_MODE_CHECK = 0;
+    private static final String TAG = MineRadioAdapter.class.getSimpleName();
     int mEditMode = MYLIVE_MODE_CHECK;
 
     private int secret = 0;

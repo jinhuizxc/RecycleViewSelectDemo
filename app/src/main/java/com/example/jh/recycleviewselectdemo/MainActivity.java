@@ -68,7 +68,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Mine
         mRadioAdapter = new MineRadioAdapter(this);
         gridLayoutManager = new GridLayoutManager(this, 3);
         mRecyclerview.setLayoutManager(gridLayoutManager);
-        DividerItemDecoration itemDecorationHeader = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
+        DividerItemDecoration itemDecorationHeader = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL_LIST);
         itemDecorationHeader.setDividerDrawable(ContextCompat.getDrawable(this, R.drawable.divider_main_bg_height_1));
         mRecyclerview.addItemDecoration(itemDecorationHeader);
         mRecyclerview.setAdapter(mRadioAdapter);
