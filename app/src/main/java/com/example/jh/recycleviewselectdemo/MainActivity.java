@@ -218,6 +218,13 @@ public class MainActivity extends Activity implements View.OnClickListener, Mine
 
 
     private void clearAll() {
+        // 清除选中状态
+        for (int i = mRadioAdapter.getMyLiveList().size(), j =0 ; i > j; i--) {
+            MyLiveList myLive = mRadioAdapter.getMyLiveList().get(i-1);
+            if (myLive.isSelect()) {
+                myLive.setSelect(false);
+            }
+        }
         mTvSelectNum.setText(String.valueOf(0));
         isSelectAll = false;
         mSelectAll.setText("全选");
