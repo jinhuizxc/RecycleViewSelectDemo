@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -43,7 +44,10 @@ public class MainActivity extends Activity implements View.OnClickListener, Mine
 
     TextView mBtnEditor;
     private MineRadioAdapter mRadioAdapter = null;
-    private GridLayoutManager gridLayoutManager;
+    // GridLayoutManager
+//    private GridLayoutManager gridLayoutManager;
+    // LinearLayoutManager
+    private LinearLayoutManager linearLayoutManager;
     private List<MyLiveList> mList = new ArrayList<>();
     private int mEditMode = MYLIVE_MODE_CHECK;
     private boolean isSelectAll = false;
@@ -66,8 +70,13 @@ public class MainActivity extends Activity implements View.OnClickListener, Mine
 
     private void initData() {
         mRadioAdapter = new MineRadioAdapter(this);
-        gridLayoutManager = new GridLayoutManager(this, 3);
-        mRecyclerview.setLayoutManager(gridLayoutManager);
+
+        // 配置gridLayoutManager
+//        gridLayoutManager = new GridLayoutManager(this, 3);
+//        mRecyclerview.setLayoutManager(gridLayoutManager);
+        // 配置LinearLayoutManager
+        linearLayoutManager = new LinearLayoutManager(this);
+        mRecyclerview.setLayoutManager(linearLayoutManager);
         DividerItemDecoration itemDecorationHeader = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL_LIST);
         itemDecorationHeader.setDividerDrawable(ContextCompat.getDrawable(this, R.drawable.divider_main_bg_height_1));
         mRecyclerview.addItemDecoration(itemDecorationHeader);
